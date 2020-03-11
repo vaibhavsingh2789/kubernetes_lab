@@ -1,0 +1,8 @@
+---
+- name: Generate vagrant-ansible inventory
+  hosts: all
+  become: yes
+  max_fail_percentage: "{{cli_max_fail_percentage|default(100)}}"
+  gather_facts: no
+  tasks:
+    - command: "swapoff -a"
